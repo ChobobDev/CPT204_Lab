@@ -21,12 +21,13 @@ public class SkipSum {
 
     private static boolean skipSumHelper(List<Integer> list, int start, int sum) {
         // base case
-        
-		
-		
+        if(start>=list.size()||sum<=0) {
+            if (sum == 0)
+                return true;
+            else
+                return false;
+        }
         // recursive step
-        
-		
-		return false;
+        return skipSumHelper(list,start+2, sum-list.get(start))||skipSumHelper(list,start+1, sum);
     }
 }

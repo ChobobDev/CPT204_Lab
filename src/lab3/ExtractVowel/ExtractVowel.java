@@ -14,15 +14,17 @@ public class ExtractVowel {
 
     private static String extractVowelHelper(String str, int start, String vowels) {
         // base case
-        
-		
-		
+        if (start > str.length()-1) {
+            return vowels;
+        }
         // recursive step
-        
-		
-		return null;
+        if (isVowel(str.charAt(start))) {
+            vowels += str.charAt(start);
+            return extractVowelHelper(str, start+1, vowels);
+        } else {
+            return extractVowelHelper(str, start+1, vowels);
+        }
     }
-
     private static boolean isVowel(char c) {
         return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
     }

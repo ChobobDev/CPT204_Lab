@@ -16,6 +16,12 @@ public class EqualSumTest {
         List<Integer> list = Arrays.asList(2, 2, 5);
 		assertEquals(false, EqualSum.equalSum(list));
 	}
+
+    @Test
+    public void testTrueEqualSum_1() {
+        List<Integer> list = Arrays.asList(2,2,1,5);
+        assertEquals(true, EqualSum.equalSum(list));
+    }
     
 	// add your own test cases
 	

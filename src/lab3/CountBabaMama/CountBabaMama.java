@@ -12,13 +12,15 @@ public class CountBabaMama {
      */
     public static int countBabaMama(String input) {
         // base case
-		
-		
-		
+        //baba 나 mama 가 없으면 굳이 recursive 하지 않고 0을 반환
+        if (!input.contains("baba") && !input.contains("mama")) {
+            return 0;
+        }
         // recursive step
-        
-		
-		return 0;
+        if (input.substring(0,4).equals("baba") || input.substring(0,4).equals("mama")) {
+            return 1+countBabaMama(input.substring(1));
+        }
+        return countBabaMama(input.substring(1));
     }
 
 }

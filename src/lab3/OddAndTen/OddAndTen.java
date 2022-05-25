@@ -14,17 +14,19 @@ public class OddAndTen {
      */
     public static boolean oddAndTen(List<Integer> list) {
         // call your recursive helper method
-        return false;
+        return oddAndTenHelper(list, 0, 0, 0);
     }
 
-    private static boolean oddAndTenHelper() { // add any parameters
+    private static boolean oddAndTenHelper(List<Integer> list, int index, int sum1, int sum2) { // add any parameters
         // base case
-        
-		
-		
+        if (index > list.size()-1) {
+            if (sum1 % 2 != 0 && sum2 % 10 == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
         // recursive step
-        
-		
-		return false;
+        return oddAndTenHelper(list, index+1, sum1+list.get(index), sum2) || oddAndTenHelper(list, index+1, sum1, sum2+list.get(index));
     }
 }
